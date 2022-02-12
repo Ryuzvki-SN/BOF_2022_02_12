@@ -1,0 +1,22 @@
+#for ip in 192.168.1.{1..10}; do ping -c 1 -t 1 $ip > /dev/null && echo “${ip} is up”; done
+#arp-scan -l
+#nc ip port (netcat)
+
+#gobuster dir -u url:port -w dictionnary
+
+# Check process 
+powershell.exe -c get-process brainpan
+
+# Check port open
+powershell.exe -c netstat -ano | findStr "3596"
+
+# Create Pattern
+msf-pattern_create -l 600
+
+# Find ofset
+msf-pattern_offset -q 35724134 -l 600
+
+# find esp
+msf-nasm-shell
+jmp esp
+
